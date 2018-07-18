@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:37:12 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/18 12:34:26 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/18 17:45:14 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@
 ** @ S		: Wide Character String
 ** @ p      : Pointer address ✓
 ** @ d or i : Signed decimal integer ✓
-** @ D		: Long Long MAAAAAN
+** @ D		: Long Long MAAAAAN ✓
 ** @ o 		: Signed octal ✓
-** @ O		: LOOOOctal
+** @ O		: LOOOOctal ✓
 ** @ u		: Unsigned decimal integer ✓
-** @ U		: Long Long MAAAAAN
+** @ U		: Long Long MAAAAAN ✓
 ** @ x      : Unsigned hexadecimal integer ✓
 ** @ X      : Unsigned hexadecimal integer (capital letters) ✓
 ** @ c or C : Character ✓
 ** @ b      : Binary
+** @ 11/13 ✓
 */
 
 # define SPECIFIERS		"sSpdDioOuUxXcC"

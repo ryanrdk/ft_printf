@@ -22,5 +22,5 @@ int		ft_poi(va_list arg)
 	s = ft_htoa(n);
 	ft_putstr("0x");
 	ft_putstr(s);
-	return (ft_strlen(s));
+	return (ft_strlen(s) + 2);
 }

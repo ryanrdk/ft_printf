@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 15:10:11 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/18 12:29:06 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/18 17:15:52 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,30 @@
 
 int		ft_find_spec(va_list arg, char c)
 {
+	int	len;
+
+	len = 0;
 	if (c == 's')
-		ft_str(arg);
+		len = ft_str(arg);
 	if (c == 'p')
-		ft_poi(arg);
+		len = ft_poi(arg);
 	if (c == 'd' || c == 'i')
-		ft_nbr(arg);
+		len = ft_nbr(arg);
 	if (c == 'D')
-		ft_lnbr(arg);
+		len = ft_lnbr(arg);
 	if (c == 'o')
-		ft_oct(arg);
+		len = ft_oct(arg);
 	if (c == 'O')
-		ft_loct(arg);
+		len = ft_loct(arg);
 	if (c == 'u')
-		ft_unbr(arg);
+		len = ft_unbr(arg);
 	if (c == 'U')
-		ft_lunbr(arg);
+		len = ft_lunbr(arg);
 	if (c == 'x')
-		ft_hex(arg);
+		len = ft_hex(arg);
 	if (c == 'X')
-		ft_alt_hex(arg);
+		len = ft_alt_hex(arg);
 	if (c == 'c' || c == 'C')
-		ft_char(arg);
-	return (1);
+		len = ft_char(arg);
+	return (len);
 }

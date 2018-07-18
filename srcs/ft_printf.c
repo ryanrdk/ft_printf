@@ -28,14 +28,16 @@ int		ft_printf(const char *format, ...)
 			if (*format == '%')
 				ft_putchar('%');
 			else if (ft_hidenp(*format, SPECIFIERS) == 1)
-				ft_find_spec(args, *format);
+				len += ft_find_spec(args, *format);
 			else if (ft_hidenp(*format, FLAGS) == 1)
 				format++;
 		}
 		else
+		{
 			ft_putchar(*format);
+			++len;
+		}
 		++format;
-		++len;
 	}
 	va_end(args);
 	return (len);
