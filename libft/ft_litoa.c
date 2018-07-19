@@ -19,8 +19,8 @@ char	*ft_litoa(long long int n)
 	int		neg;
 
 	neg = 0;
-	if (n == -9223372036854775807)
-		return (ft_strdup("-9223372036854775807"));
+	if (n >= 9223372036854775807)
+		return (ft_strdup("foobar"));
 	if (ft_neg(n))
 	{
 		neg = 1;

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_charneg.c                                       :+:      :+:    :+:   */
+/*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/07 15:05:25 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/06/07 15:07:50 by rde-kwaa         ###   ########.fr       */
+/*   Created: 2018/07/19 17:15:47 by rde-kwaa          #+#    #+#             */
+/*   Updated: 2018/07/19 17:37:05 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
-int	ft_charneg(char c)
+int		ft_flags(char f, char c)
 {
-	int n;
+	int	len;
 
-	n = 0;
-	if (c == '-')
-		n = 1;
-	return (n);
+	len = 0;
+	if (f == '#')
+		len = ft_hash(c);
+	return (len);
 }
+
