@@ -29,6 +29,11 @@ int		ft_printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 				ft_putchar('%');
+<<<<<<< HEAD
+=======
+			else if (ft_hidenp(*format, SPECIFIERS) == 1)
+				len += ft_find_spec(args, *format);
+>>>>>>> 8fd556fe8a3a8145feb0643a639d34b1d9fb2f91
 			else if (ft_hidenp(*format, FLAGS) == 1)
 			{
 				flag = *format++;

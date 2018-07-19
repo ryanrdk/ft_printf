@@ -6,7 +6,11 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:37:12 by rde-kwaa          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2018/07/19 17:46:30 by rde-kwaa         ###   ########.fr       */
+=======
+/*   Updated: 2018/07/18 17:45:14 by rde-kwaa         ###   ########.fr       */
+>>>>>>> 8fd556fe8a3a8145feb0643a639d34b1d9fb2f91
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +37,11 @@
 ** @ X      : Unsigned hexadecimal integer (capital letters) ✓
 ** @ c or C : Character ✓
 ** @ b      : Binary
+<<<<<<< HEAD
 ** @ 11 / 13 ✓✓✓✓✓✓✓✓✓✓✓
+=======
+** @ 11/13 ✓
+>>>>>>> 8fd556fe8a3a8145feb0643a639d34b1d9fb2f91
 */
 
 # define FLAGS			"#0-+"
