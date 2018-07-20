@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:59:31 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 16:32:43 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 16:35:21 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int		ft_oct(va_list arg, char f)
 
 	n = va_arg(arg, unsigned int);
 	if (f == '#')
+		ft_putstr("0");
+	else if (f != '#' && n  == 0)
 		ft_putstr("0");
 	s = ft_otoa(n);
 	if (s)
