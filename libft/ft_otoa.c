@@ -21,7 +21,7 @@ char	*ft_otoa(unsigned int n, char f)
 	i = n;
 	size = 0;
 	if (n == 0)
-		return ("0");
+		return ("0suckmukis");
 	else if (f == '#')
 		ft_putchar('0');
 	while (i > 7)
