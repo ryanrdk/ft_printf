@@ -6,14 +6,14 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 15:10:11 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/18 17:15:52 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 15:56:13 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_find_spec(va_list arg, char c)
+int		ft_find_spec(va_list arg, char c, char f)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ int		ft_find_spec(va_list arg, char c)
 	if (c == 'D')
 		len = ft_lnbr(arg);
 	if (c == 'o')
-		len = ft_oct(arg);
+		len = ft_oct(arg, f);
 	if (c == 'O')
 		len = ft_loct(arg);
 	if (c == 'u')

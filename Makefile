@@ -6,7 +6,7 @@
 #    By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/02 11:42:00 by rde-kwaa          #+#    #+#              #
-#    Updated: 2018/07/20 13:30:20 by rde-kwaa         ###   ########.fr        #
+#    Updated: 2018/07/20 15:38:15 by rde-kwaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ DIR_SRC = srcs/
 LIBFTS = ft_atoi.c ft_bzero.c ft_charneg.c ft_hidenp.c ft_htoa.c \
 		 ft_isdigit.c ft_itoa.c ft_len.c ft_litoa.c ft_lotoa.c \
 		 ft_lutoa.c ft_memalloc.c ft_neg.c ft_otoa.c ft_putchar.c \
-		 ft_putnbr.c ft_putstr.c ft_strdup.c ft_strlen.c ft_strncat.c \
-		 ft_strncpy.c ft_strnew.c ft_strsub.c ft_toupper.c ft_utoa.c
+		 ft_putnbr.c ft_putstr.c ft_strchr.c ft_strdup.c ft_strlen.c  \
+		 ft_strncat.c ft_strncpy.c ft_strnew.c ft_strsub.c ft_toupper.c \
+		 ft_utoa.c
 SRCS = ft_printf.c ft_find_spec.c ft_flags.c ft_str.c ft_poi.c ft_nbr.c \
 	   ft_lnbr.c ft_oct.c ft_loct.c ft_lunbr.c ft_unbr.c ft_hex.c \
 	   ft_alt_hex.c ft_char.c ft_hash.c

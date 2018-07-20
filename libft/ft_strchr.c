@@ -1,46 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_otoa.c                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/10 13:03:36 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 16:04:59 by rde-kwaa         ###   ########.fr       */
+/*   Created: 2018/05/21 13:26:34 by rde-kwaa          #+#    #+#             */
+/*   Updated: 2018/07/20 15:38:46 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_otoa(unsigned int n, char f)
+char	*ft_strchr(char const *s, int c)
 {
-	unsigned int	i;
-	int				size;
-	char			*p;
-
-	i = n;
-	size = 0;
-	if (n == 0)
-		return ("0");
-	else if (f == '#')
-		ft_putchar('0');
-	while (i > 7)
+	while (*s)
 	{
-		i = i / 8;
-		size++;
+		if (*s == c)
+			return ((char*)s);
+		s++;
 	}
-	if (!(p = (char*)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	else
-	{
-		p[size + 1] = '\0';
-		while (size >= 0)
-		{
-			i = n % 8;
-			p[size] = 48 + i;
-			n = n / 8;
-			size--;
-		}
-	}
-	return (p);
+	if (*s == c)
+		return ((char*)s);
+	return (NULL);
 }

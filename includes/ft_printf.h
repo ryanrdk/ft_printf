@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:37:12 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 13:31:01 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 15:56:23 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,14 @@ typedef struct			s_flags
 */
 
 int		ft_printf(const char *format, ...);
-int		ft_find_spec(va_list arg, char c);
+int		ft_find_spec(va_list arg, char c, char f);
 int		ft_flags(char f, char c);
 int		ft_str(va_list arg);
 //int		ft_wstr(va_list arg);
 int		ft_poi(va_list arg);
 int		ft_nbr(va_list arg);
 int		ft_lnbr(va_list arg);
-int		ft_oct(va_list arg);
+int		ft_oct(va_list arg, char f);
 int		ft_loct(va_list arg);
 int		ft_unbr(va_list arg);
 int		ft_lunbr(va_list arg);
