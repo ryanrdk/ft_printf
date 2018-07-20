@@ -6,28 +6,22 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 17:20:58 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 13:25:49 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 13:31:19 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 #include <stdio.h>
-int		ft_hash(va_list arg, char c)
+int		ft_hash(char c)
 {
 	int	len;
-	long int n;
-//	static long int	i;
 
 	len = 0;
 	if ((c == 'o' || c == 'O'))
 	{
-		n = *((int*)&arg);
-		if (n)
-		{
-			ft_putchar('0');
-			return (1);
-		}
+		ft_putchar('0');
+		len++;
 	}
 	else if (c == 'x')
 	{

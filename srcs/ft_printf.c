@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:36:32 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/19 21:23:32 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 13:31:40 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_printf(const char *format, ...)
 			else if (ft_hidenp(*format, FLAGS) == 1)
 			{
 				flag = *format++;
-				len += ft_flags(args, flag, *format);
+				len += ft_flags(flag, *format);
 			}
 			/*while (!ft_hidenp(*format, SPECIFIERS))
 				format++;*/

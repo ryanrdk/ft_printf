@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:37:12 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/19 21:23:35 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 13:31:01 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ typedef struct			s_flags
 
 int		ft_printf(const char *format, ...);
 int		ft_find_spec(va_list arg, char c);
-int		ft_flags(va_list arg, char f, char c);
+int		ft_flags(char f, char c);
 int		ft_str(va_list arg);
 //int		ft_wstr(va_list arg);
 int		ft_poi(va_list arg);
@@ -96,6 +96,6 @@ int		ft_hex(va_list arg);
 int		ft_alt_hex(va_list arg);
 int		ft_char(va_list arg);
 //int		ft_bin(va_list arg);
-int		ft_hash(va_list arg, char c);
+int		ft_hash(char c);
 
 #endif
