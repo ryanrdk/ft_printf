@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:59:31 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/19 19:06:46 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 13:23:59 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int		ft_oct(va_list arg)
 
 	n = va_arg(arg, unsigned int);
 	s = ft_otoa(n);
-	ft_putstr(s);
+	if (s)
+	{
+		ft_putstr(s);
+	}
 	return (ft_strlen(s));
 }
