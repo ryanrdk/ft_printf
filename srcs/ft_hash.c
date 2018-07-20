@@ -6,13 +6,13 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 17:20:58 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 16:02:19 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 16:16:17 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
-#include <stdio.h>
+
 int		ft_hash(char c)
 {
 	int	len;

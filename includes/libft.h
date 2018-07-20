@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 14:23:45 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 15:57:35 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 16:19:29 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char				*ft_lotoa(unsigned long long int n);
 char				*ft_lutoa(unsigned long long int n);
 void				*ft_memalloc(size_t size);
 int					ft_neg(int n);
-char				*ft_otoa(unsigned int n, char f);
+char				*ft_otoa(unsigned int n);
 void				ft_putchar(char c);
 void				ft_putnbr(int n);
 void				ft_putstr(char const *s);

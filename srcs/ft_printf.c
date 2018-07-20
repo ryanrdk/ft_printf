@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:36:32 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 16:01:52 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 16:27:42 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		ft_printf(const char *format, ...)
 				format++;*/
 			if (ft_hidenp(*format, SPECIFIERS))
 				len += ft_find_spec(args, *format, flag);
+			flag = '.';
 		}
 		else
 		{

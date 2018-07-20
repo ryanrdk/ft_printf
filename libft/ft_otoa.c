@@ -6,13 +6,13 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 13:03:36 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 16:04:59 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/20 16:20:15 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_otoa(unsigned int n, char f)
+char	*ft_otoa(unsigned int n)
 {
 	unsigned int	i;
 	int				size;
@@ -20,10 +20,6 @@ char	*ft_otoa(unsigned int n, char f)
 
 	i = n;
 	size = 0;
-	if (n == 0)
-		return ("0");
-	else if (f == '#')
-		ft_putchar('x');
 	while (i > 7)
 	{
 		i = i / 8;
