@@ -21,9 +21,9 @@ char	*ft_otoa(unsigned int n, char f)
 	i = n;
 	size = 0;
 	if (n == 0)
-		return ("0suckmukis");
+		return ("0");
 	else if (f == '#')
-		ft_putchar('0');
+		ft_putchar('x');
 	while (i > 7)
 	{
 		i = i / 8;
