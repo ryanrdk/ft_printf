@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 19:03:21 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 13:17:06 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/21 13:28:08 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int		ft_hex(va_list arg, char f)
 	int 			len;
 
 	n = va_arg(arg, unsigned long);
-	len = ft_flags(f, 'x', (long long)n);
+	len = 0;
+	if (f)
+		len = ft_flags(f, 'x', (long long)n);
 	s = ft_htoa(n);
 	ft_putstr(s);
 	len += ft_strlen(s);

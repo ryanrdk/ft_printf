@@ -6,13 +6,12 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:36:32 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 11:22:39 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/21 13:26:28 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
-#include <stdio.h>
 
 int		ft_printf(const char *format, ...)
 {
@@ -22,6 +21,7 @@ int		ft_printf(const char *format, ...)
 
 	va_start(args, format);
 	len = 0;
+	flag = (char)0;
 	while (*format != '\0')
 	{
 		if (*format == '%')
@@ -45,6 +45,7 @@ int		ft_printf(const char *format, ...)
 			++len;
 		}
 		++format;
+		flag = (char)0;
 	}
 	va_end(args);
 	return (len);

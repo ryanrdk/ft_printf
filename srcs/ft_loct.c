@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:59:31 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 13:17:58 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/21 13:29:00 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int		ft_loct(va_list arg, char f)
 	int				len;
 
 	n = va_arg(arg, unsigned int);
-	len = ft_flags(f, 'O', (long long)n);
+	len = 0;
+	if (f)
+		len = ft_flags(f, 'O', (long long)n);
 	s = ft_lotoa(n);
 	ft_putstr(s);
 	len += ft_strlen(s);
