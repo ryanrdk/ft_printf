@@ -6,18 +6,25 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:53:24 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/06/07 11:53:38 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/21 12:59:30 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len(int n)
+size_t	ft_len(int n)
 {
 	int		len;
 
 	len = 0;
-	while (n /= 10)
+	if (n == 0)
+		return (1);
+	if (n < len)
+		len += 1;
+	while (n != 0)
+	{
+		n = n / 10;
 		len++;
+	}
 	return (len);
 }

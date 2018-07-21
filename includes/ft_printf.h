@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:37:12 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 15:56:23 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/21 11:48:22 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,6 @@
 */
 
 # define FLAGS			"#0-+"
-
-typedef struct			s_flags
-{
-	int		hash;
-	int		zero;
-	int		left;
-	int		sign;
-}						t_flags;
 
 /*
 ** @HASH  : Used with o, x or X specifiers the value is preceeded with
@@ -82,20 +74,19 @@ typedef struct			s_flags
 
 int		ft_printf(const char *format, ...);
 int		ft_find_spec(va_list arg, char c, char f);
-int		ft_flags(char f, char c);
+int		ft_flags(char f, char c, long n);
 int		ft_str(va_list arg);
 //int		ft_wstr(va_list arg);
-int		ft_poi(va_list arg);
-int		ft_nbr(va_list arg);
-int		ft_lnbr(va_list arg);
+int		ft_poi(va_list arg, char f);
+int		ft_nbr(va_list arg, char f);
+int		ft_lnbr(va_list arg, char f);
 int		ft_oct(va_list arg, char f);
-int		ft_loct(va_list arg);
-int		ft_unbr(va_list arg);
-int		ft_lunbr(va_list arg);
-int		ft_hex(va_list arg);
-int		ft_alt_hex(va_list arg);
+int		ft_loct(va_list arg, char f);
+int		ft_unbr(va_list arg, char f);
+int		ft_lunbr(va_list arg, char f);
+int		ft_hex(va_list ar, char fg);
+int		ft_alt_hex(va_list arg, char f);
 int		ft_char(va_list arg);
 //int		ft_bin(va_list arg);
-int		ft_hash(char c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 18:40:57 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/06/04 15:00:12 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/21 13:03:34 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,27 @@
 
 char	*ft_litoa(long long int n)
 {
-	int		len;
+	size_t	i;
+	size_t	n_size;
 	char	*str;
-	int		neg;
 
-	neg = 0;
-	if (n >= 9223372036854775807)
-		return (ft_strdup("foobar"));
-	if (ft_neg(n))
-	{
-		neg = 1;
-		n *= -1;
-	}
-	len = 2 + neg + ft_len(n);
-	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+	i = 0;
+	if (n == -9223372036854775807)
+		return (ft_strdup("-9223372036854775807"));
+	n_size = ft_len(n);
+	if (!(str = (char *)malloc(sizeof(char) * (n_size + 1))))
 		return (NULL);
-	str[--len] = '\0';
-	while (len--)
+	str[n_size] = 0;
+	if (n < 0)
 	{
-		str[len] = n % 10 + '0';
-		n = n / 10;
-	}
-	if (neg)
 		str[0] = '-';
+		n *= -1;
+		i += 1;
+	}
+	while (i < n_size--)
+	{
+		str[n_size] = (n % 10) + '0';
+		n /= 10;
+	}
 	return (str);
 }

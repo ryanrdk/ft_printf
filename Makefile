@@ -6,7 +6,7 @@
 #    By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/02 11:42:00 by rde-kwaa          #+#    #+#              #
-#    Updated: 2018/07/20 15:38:15 by rde-kwaa         ###   ########.fr        #
+#    Updated: 2018/07/21 11:32:01 by rde-kwaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,11 @@ LIBFTS = ft_atoi.c ft_bzero.c ft_charneg.c ft_hidenp.c ft_htoa.c \
 		 ft_utoa.c
 SRCS = ft_printf.c ft_find_spec.c ft_flags.c ft_str.c ft_poi.c ft_nbr.c \
 	   ft_lnbr.c ft_oct.c ft_loct.c ft_lunbr.c ft_unbr.c ft_hex.c \
-	   ft_alt_hex.c ft_char.c ft_hash.c
+	   ft_alt_hex.c ft_char.c
 
 # Source file paths
-SRC = 		$(addprefix $(DIR_SRC),$(SRCS))
 LIBFT = 	$(addprefix $(DIR_LIB),$(LIBFTS))
+SRC = 		$(addprefix $(DIR_SRC),$(SRCS))
 
 # Objects
 OBJ = 		$(SRCS:.c=.o) $(LIBFTS:.c=.o)

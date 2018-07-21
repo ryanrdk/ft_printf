@@ -14,28 +14,27 @@
 
 char	*ft_itoa(int n)
 {
-	int		len;
+	size_t	i;
+	size_t	n_size;
 	char	*str;
-	int		neg;
 
-	neg = 0;
-	if (n == -2147483647 - 1)
-		return (ft_strdup("-2147483648"));
-	if (ft_neg(n))
-	{
-		neg = 1;
-		n *= -1;
-	}
-	len = 2 + neg + ft_len(n);
-	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+	i = 0;
+	if (n == -2147483648)
+		return (strdup("-2147483648"));
+	n_size = ft_len(n);
+	if (!(str = (char *)malloc(sizeof(char) * (n_size + 1))))
 		return (NULL);
-	str[--len] = '\0';
-	while (len--)
+	str[n_size] = 0;
+	if (n < 0)
 	{
-		str[len] = n % 10 + '0';
-		n = n / 10;
-	}
-	if (neg)
 		str[0] = '-';
+		n *= -1;
+		i += 1;
+	}
+	while (i < n_size--)
+	{
+		str[n_size] = (n % 10) + '0';
+		n /= 10;
+	}
 	return (str);
 }

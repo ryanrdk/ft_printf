@@ -6,20 +6,24 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:59:31 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/18 12:25:35 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/21 12:11:57 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_loct(va_list arg)
+int		ft_loct(va_list arg, char f)
 {
-	unsigned long long int	n;
-	char				*s;
+	unsigned int	n;
+	char			*s;
+	int				len;
 
-	n = va_arg(arg, unsigned long long int);
+	n = va_arg(arg, unsigned int);
+	len = ft_flags(f, 'O', (long)n);
 	s = ft_lotoa(n);
-	ft_putstr(s);
-	return (ft_strlen(s));
+	if (s)
+		ft_putstr(s);
+	len += ft_strlen(s);
+	return (len);
 }
