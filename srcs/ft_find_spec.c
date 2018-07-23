@@ -20,6 +20,8 @@ int		ft_find_spec(va_list arg, char c, char f)
 	len = 0;
 	if (c == 's')
 		len = ft_str(arg);
+	if (c == 'S')
+		len = ft_wstr(arg);
 	if (c == 'p')
 		len = ft_poi(arg, f);
 	if (c == 'd' || c == 'i')

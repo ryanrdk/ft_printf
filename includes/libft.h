@@ -32,6 +32,7 @@ char				*ft_otoa(unsigned int n);
 void				ft_putchar(char c);
 void				ft_putnbr(int n);
 void				ft_putstr(char const *s);
+int				ft_putwstr(wchar_t *ws);
 char				*ft_strchr(char const *s, int c);
 char				*ft_strdup(char const *src);
 size_t				ft_strlen(char const *s);
@@ -42,6 +43,6 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_toupper(char *s);
 char				*ft_utoa(unsigned int n);
 char				*ft_ultoa(unsigned long n);
-
+size_t				ft_wstrlen(wchar_t *ws);
 
 #endif

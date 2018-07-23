@@ -21,7 +21,7 @@
 
 /*
 ** @ s		: String of characters ✓
-** @ S		: Wide Character String
+** @ S		: Wide Character String ✓
 ** @ p      : Pointer address ✓
 ** @ d or i : Signed decimal integer ✓
 ** @ D		: Long Long MAAAAAN ✓
@@ -32,7 +32,7 @@
 ** @ x      : Unsigned hexadecimal integer ✓
 ** @ X      : Unsigned hexadecimal integer (capital letters) ✓
 ** @ c or C : Character ✓
-** @ 11 / 12 ✓✓✓✓✓✓✓✓✓✓✓
+** @ 12 / 12 ✓✓✓✓✓✓✓✓✓✓✓✓
 */
 
 # define FLAGS			"#0-+"
@@ -49,8 +49,8 @@
 **          before the value.
 ** @PLUS  : Forces to preceed the result with a plus or minus sign (+ or -),
 **          even for positive numbers. By default, only negative numbers are
-**          preceded with a minus (-) sign.
-** @ 1 / 4 ✓
+**          preceded with a minus (-) sign. ✓
+** @ 2 / 4 ✓✓
 */
 
 # define CFLAGS			"hljz"
@@ -75,7 +75,7 @@ int		ft_printf(const char *format, ...);
 int		ft_find_spec(va_list arg, char c, char f);
 int		ft_flags(char f, char c, long long n);
 int		ft_str(va_list arg);
-//int		ft_wstr(va_list arg);
+int		ft_wstr(va_list arg);
 int		ft_poi(va_list arg, char f);
 int		ft_nbr(va_list arg, char f);
 int		ft_lnbr(va_list arg, char f);
