@@ -6,13 +6,13 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:53:46 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/06/07 11:53:49 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/23 17:40:47 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_neg(int n)
+int	ft_neg(signed long long n)
 {
 	if (n < 0)
 		return (1);

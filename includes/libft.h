@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 14:23:45 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 12:58:57 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/23 17:41:05 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ int					ft_hidenp(char c, char *s);
 char				*ft_htoa(unsigned long n);
 int					ft_isdigit(int c);
 char				*ft_itoa(int n);
-size_t				ft_len(int n);
-char				*ft_litoa(long long int n);
-char				*ft_lotoa(unsigned long long int n);
-char				*ft_lutoa(unsigned long long int n);
+size_t				ft_len(size_t n);
+char				*ft_ltoa(long n);
 void				*ft_memalloc(size_t size);
-int					ft_neg(int n);
+int					ft_neg(signed long long n);
+char				*ft_oltoa(unsigned long n);
 char				*ft_otoa(unsigned int n);
 void				ft_putchar(char c);
 void				ft_putnbr(int n);
@@ -42,6 +41,7 @@ char				*ft_strnew(size_t size);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_toupper(char *s);
 char				*ft_utoa(unsigned int n);
+char				*ft_ultoa(unsigned long n);
 
 
 #endif

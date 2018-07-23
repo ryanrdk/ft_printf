@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
@@ -6,34 +6,25 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 18:40:57 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/23 16:52:10 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/18 12:52:06 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char		*ft_ultoa(unsigned long n)
 {
-	char	*s;
-	int		i;
-	int		neg;
-	int		div;
+	int		len;
+	char	*str;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	div = 1;
-	neg = ft_neg(n);
-	if (neg == 1)
-	    n *= -1;
-	i = ft_len(n);
-	s = (char*)malloc(sizeof(char) * (i + neg + 1));
-	s[i + neg] = '\0';
-	while (--i >= 0)
+	len = ft_len(n) + 1;
+	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+		return (NULL);
+	str[--len] = '\0';
+	while (len--)
 	{
-		s[i + neg] = ((n / div) % 10) + '0';
-		div *= 10;
+		str[len] = n % 10 + '0';
+		n = n / 10;
 	}
-	if (neg)
-		s[0] = '-';
-	return (s);
+	return (str);
 }

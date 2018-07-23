@@ -6,14 +6,19 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 17:15:47 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 12:52:08 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/23 16:58:14 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-static int	ft_plus(long n)
+/*static int	ft_left()
+{
+	
+}*/
+
+static int	ft_plus(long long n)
 {
 	if (n > 0)
 	{
@@ -23,7 +28,7 @@ static int	ft_plus(long n)
 	return (0);
 }
 
-static int	ft_hash(char c, long n)
+static int	ft_hash(char c, long long n)
 {
 	int	len;
 	
@@ -48,7 +53,7 @@ static int	ft_hash(char c, long n)
 }
 
 
-int			ft_flags(char f, char c, long n)
+int			ft_flags(char f, char c, long long n)
 {
 	int	len;
 
@@ -57,5 +62,8 @@ int			ft_flags(char f, char c, long n)
 		len = ft_hash(c, n);
 	else if (f == '+' && (c != 'o' || c != 'O') && (c != 'u' || c != 'U'))
 		len = ft_plus(n);
+	/*if (f == '0')
+	if (f == '-')
+		len = ft_left();*/
 	return (len);
 }
