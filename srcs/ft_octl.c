@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_oct.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/29 18:40:57 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/23 16:52:10 by rde-kwaa         ###   ########.fr       */
+/*   Created: 2018/07/14 18:59:31 by rde-kwaa          #+#    #+#             */
+/*   Updated: 2018/07/23 16:48:54 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_itoa(int n)
+int		ft_octl(va_list arg, char f)
 {
-	char	*s;
-	int		i;
-	int		neg;
-	int		div;
+	unsigned long	n;
+	char			*s;
+	int				len;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	div = 1;
-	neg = ft_neg(n);
-	if (neg == 1)
-	    n *= -1;
-	i = ft_len(n);
-	s = (char*)malloc(sizeof(char) * (i + neg + 1));
-	s[i + neg] = '\0';
-	while (--i >= 0)
-	{
-		s[i + neg] = ((n / div) % 10) + '0';
-		div *= 10;
-	}
-	if (neg)
-		s[0] = '-';
-	return (s);
+	n = va_arg(arg, unsigned long);
+	len = 0;
+	if (f)
+		len = ft_flags(f, 'O', (unsigned long)n);
+	s = ft_oltoa(n);
+	ft_putstr(s);
+	len += ft_strlen(s);
+	return (len);
 }

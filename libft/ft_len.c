@@ -12,19 +12,17 @@
 
 #include "libft.h"
 
-size_t	ft_len(int n)
+size_t	ft_len(size_t n)
 {
-	int		len;
+	size_t	i;
 
-	len = 0;
+	i = 0;
 	if (n == 0)
 		return (1);
-	if (n < len)
-		len += 1;
-	while (n != 0)
+	while (n)
 	{
-		n = n / 10;
-		len++;
+		n /= 10;
+		i++;
 	}
-	return (len);
+	return (i);
 }

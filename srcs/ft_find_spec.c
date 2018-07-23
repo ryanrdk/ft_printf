@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 15:10:11 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 10:49:33 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/23 17:00:47 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int		ft_find_spec(va_list arg, char c, char f)
 	if (c == 'o')
 		len = ft_oct(arg, f);
 	if (c == 'O')
-		len = ft_loct(arg, f);
+		len = ft_octl(arg, f);
 	if (c == 'u')
 		len = ft_unbr(arg, f);
 	if (c == 'U')
-		len = ft_lunbr(arg, f);
+		len = ft_ulnbr(arg, f);
 	if (c == 'x')
 		len = ft_hex(arg, f);
 	if (c == 'X')

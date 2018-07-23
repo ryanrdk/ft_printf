@@ -6,21 +6,21 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 18:40:57 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/23 16:52:10 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/23 16:53:22 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char		*ft_ltoa(long n)
 {
 	char	*s;
 	int		i;
 	int		neg;
-	int		div;
+	long	div;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	if (n == -9223372036854775807 - 1)
+		return (ft_strdup("-9223372036854775808"));
 	div = 1;
 	neg = ft_neg(n);
 	if (neg == 1)

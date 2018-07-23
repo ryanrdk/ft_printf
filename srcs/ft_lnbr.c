@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 12:24:47 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 11:54:22 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/23 16:48:05 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 int		ft_lnbr(va_list arg, char f)
 {
-	long long int	n;
-	char		*s;
+	long	n;
+	char	*s;
 f++;
-	n = va_arg(arg, long long int);
-	s = ft_litoa(n);
+	n = va_arg(arg, long);
+	s = ft_ltoa(n);
 	ft_putstr(s);
 	return (ft_strlen(s));
 }

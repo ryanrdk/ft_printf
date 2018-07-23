@@ -21,6 +21,7 @@ char	*ft_utoa(unsigned int n)
 	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
 		return (NULL);
 	str[--len] = '\0';
+	len--;
 	while (len--)
 	{
 		str[len] = n % 10 + '0';

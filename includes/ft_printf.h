@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:37:12 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 11:48:22 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/23 17:00:28 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@
 ** @ x      : Unsigned hexadecimal integer ✓
 ** @ X      : Unsigned hexadecimal integer (capital letters) ✓
 ** @ c or C : Character ✓
-** @ b      : Binary
-** @ 11 / 13 ✓✓✓✓✓✓✓✓✓✓✓
+** @ 11 / 12 ✓✓✓✓✓✓✓✓✓✓✓
 */
 
 # define FLAGS			"#0-+"
@@ -74,19 +73,18 @@
 
 int		ft_printf(const char *format, ...);
 int		ft_find_spec(va_list arg, char c, char f);
-int		ft_flags(char f, char c, long n);
+int		ft_flags(char f, char c, long long n);
 int		ft_str(va_list arg);
 //int		ft_wstr(va_list arg);
 int		ft_poi(va_list arg, char f);
 int		ft_nbr(va_list arg, char f);
 int		ft_lnbr(va_list arg, char f);
 int		ft_oct(va_list arg, char f);
-int		ft_loct(va_list arg, char f);
+int		ft_octl(va_list arg, char f);
 int		ft_unbr(va_list arg, char f);
-int		ft_lunbr(va_list arg, char f);
+int		ft_ulnbr(va_list arg, char f);
 int		ft_hex(va_list ar, char fg);
 int		ft_alt_hex(va_list arg, char f);
 int		ft_char(va_list arg);
-//int		ft_bin(va_list arg);
 
 #endif
