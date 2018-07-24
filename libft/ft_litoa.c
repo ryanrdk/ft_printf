@@ -19,8 +19,8 @@ char	*ft_litoa(long long int n)
 	char	*str;
 
 	i = 0;
-	if (n == -9223372036854775807)
-		return (ft_strdup("-9223372036854775807"));
+	/*if (n == -9223372036854775807)
+		return (ft_strdup("-9223372036854775807"));*/
 	n_size = ft_len(n);
 	if (!(str = (char *)malloc(sizeof(char) * (n_size + 1))))
 		return (NULL);

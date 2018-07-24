@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex.c                                           :+:      :+:    :+:   */
+/*   ft_isuma.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 19:03:21 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 13:28:53 by rde-kwaa         ###   ########.fr       */
+/*   Created: 2018/07/24 12:47:24 by rde-kwaa          #+#    #+#             */
+/*   Updated: 2018/07/24 14:45:07 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
-
-int		ft_alt_hex(va_list arg, char f)
+int		ft_isuma(int *t, int n)
 {
-	unsigned long	n;
-	char			*s;
-	int				len;
+	int	i;
+	int	sum;
 
-	n = va_arg(arg, unsigned long);
-	len = 0;
-	if (f)
-		len = ft_flags(f, 'X', (long long)n);
-	s = ft_htoa(n);
-	ft_putstr(ft_toupper(s));
-	len += ft_strlen(s);
-	return (ft_strlen(s));
+	i = 0;
+	sum = 0;
+	while (i < n)
+		sum += t[i++];
+	return (sum);
 }

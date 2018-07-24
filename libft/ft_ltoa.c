@@ -19,8 +19,8 @@ char		*ft_ltoa(long n)
 	int		neg;
 	long	div;
 
-	if (n == -9223372036854775807 - 1)
-		return (ft_strdup("-9223372036854775808"));
+	/*if (n == -9223372036854775807 - 1)
+		return (ft_strdup("-9223372036854775808"));*/
 	div = 1;
 	neg = ft_neg(n);
 	if (neg == 1)

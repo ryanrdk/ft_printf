@@ -26,5 +26,6 @@ int		ft_loct(va_list arg, char f)
 	s = ft_lotoa(n);
 	ft_putstr(s);
 	len += ft_strlen(s);
+    ft_memdel(&s);
 	return (len);
 }

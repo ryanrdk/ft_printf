@@ -6,17 +6,18 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 12:10:28 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/10 16:11:55 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/24 14:44:49 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_str(va_list arg)
+int		ft_str(va_list arg, t_atri butes)
 {
 	char	*s;
 
+	butes.flag = '#';
 	s = va_arg(arg, char*);
 	if (!s)
 	{
