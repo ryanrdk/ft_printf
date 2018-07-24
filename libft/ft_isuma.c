@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <stdio.h>
 int		ft_isuma(int *t, int n)
 {
 	int	i;
@@ -18,6 +20,9 @@ int		ft_isuma(int *t, int n)
 	i = 0;
 	sum = 0;
 	while (i < n)
+	{
+		sum *= 10;
 		sum += t[i++];
+	}
 	return (sum);
 }

@@ -35,7 +35,7 @@ int		ft_printf(const char *format, ...)
 			else if (ft_hidenp(*format, FLAGS) == 1)
 				butes.flag = *format++;
 			while (ft_isdigit(*format))
-				w[i++] = *format++;
+				w[i++] = *format++ - 48;
 			butes.wdth = ft_isuma(w, i);
 			if (ft_hidenp(*format, SPECIFIERS))
 			{
@@ -49,7 +49,7 @@ int		ft_printf(const char *format, ...)
 			++len;
 		}
 		++format;
-		butes.flag = (char)0;
+		//butes.flag = (char)0;
 	}
 	va_end(args);
 	return (len);

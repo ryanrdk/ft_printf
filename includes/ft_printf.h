@@ -19,11 +19,14 @@
 # include <stddef.h>
 # include <wchar.h>
 
+#include <stdio.h>
+
 typedef struct			s_atri
 {
-	int		wdth;
-	char	flag;
-	char	spec;
+	unsigned int	wdth;
+	char		flag;
+	char		spec;
+	unsigned int	lnth;
 }						t_atri;
 
 # define SPECIFIERS		"sSpdDioOuUxXcC"
