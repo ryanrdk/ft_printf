@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 14:23:45 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/24 17:37:11 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/25 14:34:29 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char				*ft_oltoa(unsigned long n);
 char				*ft_otoa(unsigned int n);
 void				ft_putchar(char c);
 void				ft_putnbr(int n);
-void				ft_putstr(char const *s);
+int					ft_putstr(char const *s);
 int					ft_putwstr(wchar_t *ws);
 char				*ft_strchr(char const *s, int c);
 char				*ft_strdup(char const *src);

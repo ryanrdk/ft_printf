@@ -6,52 +6,38 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 15:10:11 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/24 17:08:28 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/25 14:37:14 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-static int	ft_handle_str(va_list arg, t_atri butes)
+int			ft_find_spec(va_list arg, t_atri bute)
 {
-	int		len;
-
-	len = 0;
-	if (butes.spec == 's')
-		len = ft_str(arg, butes);
-	if (butes.spec == 'S')
-		len = ft_wstr(arg, butes);
-	if (butes.spec == 'c' || butes.spec == 'C')
-		len = ft_char(arg, butes);
-	return (len);
-}
-
-int			ft_find_spec(va_list arg, t_atri butes)
-{
-	int		len;
-
-	len = 0;
-	if (butes.spec == 's' || butes.spec == 'S' || butes.spec == 'c' \
-			|| butes.spec == 'C')
-		len = ft_handle_str(arg, butes);
-	if (butes.spec == 'p')
-		len = ft_poi(arg, butes);
-	if (butes.spec == 'd' || butes.spec == 'i')
-		len = ft_nbr(arg, butes);
-	if (butes.spec == 'D')
-		len = ft_lnbr(arg, butes);
-	if (butes.spec == 'o')
-		len = ft_oct(arg, butes);
-	if (butes.spec == 'O')
-		len = ft_octl(arg, butes);
-	if (butes.spec == 'u')
-		len = ft_unbr(arg, butes);
-	if (butes.spec == 'U')
-		len = ft_ulnbr(arg, butes);
-	if (butes.spec == 'x')
-		len = ft_hex(arg, butes);
-	if (butes.spec == 'X')
-		len = ft_hexu(arg, butes);
-	return (len);
+	if (bute.spec == 's')
+		bute.lnth = ft_str(arg, bute);
+	if (bute.spec == 'S')
+		bute.lnth = ft_wstr(arg, bute);
+	if (bute.spec == 'c' || bute.spec == 'C')
+		bute.lnth = ft_char(arg, bute);
+	if (bute.spec == 'p')
+		bute.lnth = ft_poi(arg, bute);
+	if (bute.spec == 'd' || bute.spec == 'i')
+		bute.lnth = ft_nbr(arg, bute);
+	if (bute.spec == 'D')
+		bute.lnth = ft_lnbr(arg, bute);
+	if (bute.spec == 'o')
+		bute.lnth = ft_oct(arg, bute);
+	if (bute.spec == 'O')
+		bute.lnth = ft_octl(arg, bute);
+	if (bute.spec == 'u')
+		bute.lnth = ft_unbr(arg, bute);
+	if (bute.spec == 'U')
+		bute.lnth = ft_ulnbr(arg, bute);
+	if (bute.spec == 'x')
+		bute.lnth = ft_hex(arg, bute);
+	if (bute.spec == 'X')
+		bute.lnth = ft_hexu(arg, bute);
+	return (bute.lnth);
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 int		ft_isuma(int *t, int n)
 {
 	int	i;

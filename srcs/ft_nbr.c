@@ -13,17 +13,15 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_nbr(va_list arg, t_atri butes)
+int		ft_nbr(va_list arg, t_atri bute)
 {
 	int		n;
 	char	*s;
-	int		len;
 
 	n = va_arg(arg, int);
-	len = ft_flags(butes.flag, 'd', (long long)n);
+	bute.lnth = ft_flags(bute.flag, 'd', (long long)n);
 	s = ft_itoa(n);
-	ft_putstr(s);
-	len += ft_strlen(s);
-    ft_memdel(&s);
-	return (len);
+	bute.lnth += ft_putstr(s);
+	ft_memdel(&s);
+	return (bute.lnth);
 }

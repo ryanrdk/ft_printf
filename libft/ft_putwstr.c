@@ -6,16 +6,13 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 17:40:41 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/23 17:40:43 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/25 14:49:06 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <wchar.h>
-#include <unistd.h>
+#include "libft.h"
 
-
-int		ft_wclen(wchar_t wc)
+int			ft_wclen(wchar_t wc)
 {
 	int		len;
 
@@ -69,7 +66,7 @@ int			ft_putwchar(wchar_t wc)
 	return (len);
 }
 
-int		ft_putwstr(wchar_t *ws)
+int			ft_putwstr(wchar_t *ws)
 {
 	int		len;
 

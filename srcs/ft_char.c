@@ -13,11 +13,11 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_char(va_list arg, t_atri butes)
+int		ft_char(va_list arg, t_atri bute)
 {
 	char	c;
 
-	butes.flag = '#';
+	bute.flag = '#';
 	c = va_arg(arg, int);
 	ft_putchar(c);
 	return (1);

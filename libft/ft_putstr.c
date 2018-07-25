@@ -6,18 +6,19 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 17:30:07 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/06/04 16:34:08 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/25 14:42:45 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+int		ft_putstr(const char *s)
 {
-	int	i;
+	int		len;
 
-	i = 0;
+	len = 0;
 	if (s)
-		while (s[i])
-			ft_putchar(s[i++]);
+		len = ft_strlen(s);
+	write(1, s, len);
+	return (len);
 }

@@ -13,19 +13,18 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_octl(va_list arg, t_atri butes)
+int		ft_octl(va_list arg, t_atri bute)
 {
 	unsigned long	n;
 	char			*s;
-	int				len;
 
 	n = va_arg(arg, unsigned long);
-	len = 0;
-	if (butes.flag)
-		len = ft_flags(butes.flag, 'O', (unsigned long)n);
+	bute.lnth = 0;
+	if (bute.flag)
+		bute.lnth = ft_flags(bute.flag, 'O', (unsigned long)n);
 	s = ft_oltoa(n);
 	ft_putstr(s);
-	len += ft_strlen(s);
-    ft_memdel(&s);
-    return (len);
+	bute.lnth += ft_strlen(s);
+	ft_memdel(&s);
+	return (bute.lnth);
 }

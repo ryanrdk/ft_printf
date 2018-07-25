@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 13:03:36 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/21 11:51:04 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/25 14:41:08 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_oltoa(unsigned long n)
 {
 	unsigned long long	i;
-	int				size;
-	char			*p;
+	int					size;
+	char				*p;
 
 	i = n;
 	size = 0;

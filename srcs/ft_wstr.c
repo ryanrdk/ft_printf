@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wstr.c                                           :+:      :+:    :+:   */
+/*   ft_wstr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,18 +13,17 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-int	ft_wstr(va_list arg, t_atri butes)
+int	ft_wstr(va_list arg, t_atri bute)
 {
 	wchar_t	*s;
-	int	len;
 
-	butes.flag = '#';
+	bute.flag = '#';
 	s = va_arg(arg, wchar_t*);
 	if (!s)
 	{
 		ft_putstr("(null)");
 		return (0);
 	}
-	len = ft_putwstr(s);
-	return (len);
+	bute.lnth += ft_putwstr(s);
+	return (bute.lnth);
 }

@@ -13,18 +13,16 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_poi(va_list arg, t_atri butes)
+int		ft_poi(va_list arg, t_atri bute)
 {
 	unsigned long	n;
 	char			*s;
-	int				len;
 
 	n = va_arg(arg, unsigned long);
-	len = ft_flags(butes.flag, 'p', n);
+	bute.lnth = ft_flags(bute.flag, 'p', n);
 	s = ft_htoa(n);
 	ft_putstr("0x");
-	ft_putstr(s);
-	len = ft_strlen(s) + 2;
-    ft_memdel(&s);
-	return (len);
+	bute.lnth += ft_putstr(s) + 2;
+	ft_memdel(&s);
+	return (bute.lnth);
 }
