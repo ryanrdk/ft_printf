@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:36:32 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/25 12:01:51 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/27 12:38:05 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,23 @@ int		ft_printf(const char *format, ...)
 {
 	va_list	args;
 	t_atri	bute;
-	int		i;
-	int		w[256];
 
-	va_start(args, format);
 	ft_bzero(&bute, sizeof(t_atri));
-	i = 0;
-	while (*format != '\0')
+	bute.lnth = 0;
+	bute.buf = format;
+	va_start(args, format);
+	while (*bute.buf != '\0')
 	{
-		if (*format == '%')
+		if (*bute.buf == '%')
 		{
-			if (ft_hidenp(*++format, FLAGS) == 1)
-				bute.flag = *format++;
-			while (ft_isdigit(*format))
-				w[i++] = *format++ - 48;
-			bute.wdth = ft_isuma(w, i);
-			if (ft_hidenp(*format, SPECIFIERS))
-			{
-				bute.spec = *format;
-				bute.lnth += ft_find_spec(args, bute);
-			}
+			ft_form(args, bute);
+			bute.buf++;
 		}
 		else
 		{
-			ft_putchar(*format);
+			ft_putchar(*bute.buf);
 			++bute.lnth;
 		}
-		++format;
 	}
 	va_end(args);
 	return (bute.lnth);

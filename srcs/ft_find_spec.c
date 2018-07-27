@@ -6,14 +6,14 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 15:10:11 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/25 14:37:14 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/27 12:23:44 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-int			ft_find_spec(va_list arg, t_atri bute)
+static int	ft_find_spec(va_list arg, t_atri bute)
 {
 	if (bute.spec == 's')
 		bute.lnth = ft_str(arg, bute);
@@ -39,5 +39,26 @@ int			ft_find_spec(va_list arg, t_atri bute)
 		bute.lnth = ft_hex(arg, bute);
 	if (bute.spec == 'X')
 		bute.lnth = ft_hexu(arg, bute);
+	return (bute.lnth);
+}
+
+int			ft_form(va_list arg, t_atri bute)
+{
+	int	i;
+	int	w[42];
+
+	i = 0;
+	if (ft_strchr(FLAGS, *++bute.buf) == 1)
+		bute.flag = *bute.buf++;
+	while (ft_isdigit(*bute.buf))
+		w[i++] = *bute.buf++ - 48;
+	if (i)
+		bute.wdth = ft_isuma(w, i);
+	if (ft_strchr(SPECIFIERS, *bute.buf))		
+	{
+		bute.spec = *bute.buf;
+		bute.buf++;
+		bute.lnth += ft_find_spec(arg, bute);
+	}
 	return (bute.lnth);
 }

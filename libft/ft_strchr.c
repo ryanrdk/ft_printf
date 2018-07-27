@@ -6,21 +6,21 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 13:26:34 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/20 15:38:46 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/27 12:09:18 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char const *s, int c)
+int		ft_strchr(char const *s, char c)
 {
 	while (*s)
 	{
 		if (*s == c)
-			return ((char*)s);
+			return (1);
 		s++;
 	}
 	if (*s == c)
-		return ((char*)s);
-	return (NULL);
+		return (1);
+	return (0);
 }

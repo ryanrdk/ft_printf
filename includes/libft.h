@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 14:23:45 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/25 14:34:29 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/27 12:38:16 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 int					ft_atoi(char const *s);
 void				ft_bzero(void *s, size_t n);
 int					ft_charneg(char c);
-int					ft_hidenp(char c, char *s);
 char				*ft_htoa(unsigned long n);
 int					ft_isdigit(int c);
 int					ft_isuma(int *t, int n);
@@ -34,7 +33,7 @@ void				ft_putchar(char c);
 void				ft_putnbr(int n);
 int					ft_putstr(char const *s);
 int					ft_putwstr(wchar_t *ws);
-char				*ft_strchr(char const *s, int c);
+int					ft_strchr(char const *s, char c);
 char				*ft_strdup(char const *src);
 size_t				ft_strlen(char const *s);
 char				*ft_strncat(char *dst, char const *src, size_t n);

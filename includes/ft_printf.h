@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:37:12 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/25 14:48:26 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/27 12:38:12 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ typedef struct			s_atri
 	char			flag;
 	char			spec;
 	unsigned int	lnth;
-	char			*format;
+	const char		*form;
+	const char 			*buf;
 }						t_atri;
 
 # define SPECIFIERS		"sSpdDioOuUxXcC"
@@ -84,19 +85,19 @@ typedef struct			s_atri
 */
 
 int						ft_printf(const char *format, ...);
-int						ft_find_spec(va_list arg, t_atri butes);
+int						ft_form(va_list arg, t_atri bute);
 int						ft_flags(char f, char c, long long n);
-int						ft_str(va_list arg, t_atri butes);
-int						ft_wstr(va_list arg, t_atri butes);
-int						ft_poi(va_list arg, t_atri butes);
-int						ft_nbr(va_list arg, t_atri butes);
-int						ft_lnbr(va_list arg, t_atri butes);
-int						ft_oct(va_list arg, t_atri butes);
-int						ft_octl(va_list arg, t_atri butes);
-int						ft_unbr(va_list arg, t_atri butes);
-int						ft_ulnbr(va_list arg, t_atri butes);
-int						ft_hex(va_list arg, t_atri butes);
-int						ft_hexu(va_list arg, t_atri butes);
-int						ft_char(va_list arg, t_atri butes);
+int						ft_str(va_list arg, t_atri bute);
+int						ft_wstr(va_list arg, t_atri bute);
+int						ft_poi(va_list arg, t_atri bute);
+int						ft_nbr(va_list arg, t_atri bute);
+int						ft_lnbr(va_list arg, t_atri bute);
+int						ft_oct(va_list arg, t_atri bute);
+int						ft_octl(va_list arg, t_atri bute);
+int						ft_unbr(va_list arg, t_atri bute);
+int						ft_ulnbr(va_list arg, t_atri bute);
+int						ft_hex(va_list arg, t_atri bute);
+int						ft_hexu(va_list arg, t_atri bute);
+int						ft_char(va_list arg, t_atri bute);
 
 #endif
