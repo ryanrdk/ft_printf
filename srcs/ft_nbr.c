@@ -22,7 +22,8 @@ static size_t	ft_len(intmax_t n)
 {
 	size_t	i;
 	
-	i = 0;
+	i = 1;
+	n /= 10;
 	if (n == 0)
 		return (1);
 	while (n)
