@@ -33,7 +33,7 @@ typedef struct			s_atri
 	int				ll;
 	int				z;
 	int				j;
-	int				spec;
+	char			spec;
 	short			slen;
 }						t_atri;
 
