@@ -12,13 +12,17 @@
 
 #include "libft.h"
 
-int		ft_putstr(const char *s)
+int		ft_putstr(const char *str, int p)
 {
 	int		len;
+	char	*tmp;
 
 	len = 0;
-	if (s)
-		len = ft_strlen(s);
-	write(1, s, len);
+	if (str == NULL)
+		return (ft_putstr("(null)", p));
+	len = ft_strlenp(str, p);
+	tmp = (char*)malloc(sizeof(char) * (len + 1));
+	strncpy(tmp, str, len);
+	write(1, tmp, len);
 	return (len);
 }

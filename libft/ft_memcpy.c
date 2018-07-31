@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wstr.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ochayche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/15 14:24:31 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/24 14:44:27 by rde-kwaa         ###   ########.fr       */
+/*   Created: 2016/11/23 12:21:48 by ochayche          #+#    #+#             */
+/*   Updated: 2016/11/23 12:21:49 by ochayche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
-int	ft_wstr(va_list arg, t_atri bute)
+void					*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	wchar_t	*s;
+	size_t				i;
+	unsigned char		*vdst;
+	const unsigned char *vsrc;
 
-	bute.flag = '#';
-	s = va_arg(arg, wchar_t*);
-	if (!s)
+	vdst = dst;
+	vsrc = src;
+	i = 0;
+	while (i < n)
 	{
-		ft_putstr("(null)");
-		return (0);
+		vdst[i] = vsrc[i];
+		i++;
 	}
-	bute.lnth += ft_putwstr(s);
-	return (bute.lnth);
+	return (dst);
 }

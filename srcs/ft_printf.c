@@ -16,35 +16,21 @@
 int		ft_printf(const char *format, ...)
 {
 	va_list	args;
-	t_atri	bute;
-	int		i;
-	int		w[256];
-
+	int 	len;
+	
 	va_start(args, format);
-	ft_bzero(&bute, sizeof(t_atri));
-	i = 0;
+	len = 0;
 	while (*format != '\0')
 	{
-		if (*format == '%')
-		{
-			if (ft_hidenp(*++format, FLAGS) == 1)
-				bute.flag = *format++;
-			while (ft_isdigit(*format))
-				w[i++] = *format++ - 48;
-			bute.wdth = ft_isuma(w, i);
-			if (ft_hidenp(*format, SPECIFIERS))
-			{
-				bute.spec = *format;
-				bute.lnth += ft_find_spec(args, bute);
-			}
-		}
+		if (*format != '%')
+			len += ft_putchar(*format);
 		else
 		{
-			ft_putchar(*format);
-			++bute.lnth;
+			format++;
+			len += ft_form((char**)(&format), args);
 		}
-		++format;
+		format++;
 	}
 	va_end(args);
-	return (bute.lnth);
+	return (len);
 }

@@ -13,48 +13,29 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-static int	ft_plus(long long n)
-{
-	if (n > 0)
-	{
-		ft_putchar('+');
-		return (1);
-	}
-	return (0);
-}
-
-static int	ft_hash(char c, long long n)
+int			ft_spec(t_atri *bute, va_list arg)
 {
 	int	len;
 
 	len = 0;
-	if (c == 'o' || c == 'O')
-	{
-		if (n != 0)
-			ft_putchar('0');
-		len++;
-	}
-	else if (c == 'x')
-	{
-		ft_putstr("0x");
-		len = 2;
-	}
-	else if (c == 'X')
-	{
-		ft_putstr("0X");
-		len = 2;
-	}
-	return (len);
-}
-
-int			ft_flags(char f, char c, long long n)
-{
-	int	len;
-
-	len = 0;
-	if (f == '#')
-		len = ft_hash(c, n);
-	else if (f == '+' && (c != 'o' || c != 'O') && (c != 'u' || c != 'U'))
-		len = ft_plus(n);
+	if (bute->spec == '%')
+		len = ft_lit(bute, '%');
+	if (bute->spec == 's' || bute->spec == 'S')
+		len = ft_str(bute, va_arg(arg, void *));
+	else if (bute->spec == 'p')
+		len = ft_poi(bute, va_arg(arg, void *));
+	else if (bute->spec == 'd' || bute->spec == 'D' || bute->spec == 'i')
+		len = ft_nbr(bute, va_arg(arg, void *));
+	else if (bute->spec == 'o' || bute->spec == 'O')
+		len = ft_oct(bute, va_arg(arg, void *));
+	else if (bute->spec == 'u' || bute->spec == 'U')
+		len = ft_unb(bute, va_arg(arg, void *));
+	else if (bute->spec == 'x' || bute->spec == 'X')
+		len = ft_hex(bute, va_arg(arg, void *));
+	else if (bute->spec == 'c' || bute->spec == 'C')
+		len = ft_char(bute, va_arg(arg, void *));
+	else
+		len = (ft_char(bute, va_arg(arg, void *)));
+	ft_strdel(&(bute->flag));
 	return (len);
 }

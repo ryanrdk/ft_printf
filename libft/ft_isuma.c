@@ -12,17 +12,20 @@
 
 #include "libft.h"
 
-int		ft_isuma(int *t, int n)
+int		ft_isuma(char **s)
 {
-	int	i;
-	int	sum;
-
+	int			res;
+	int			i;
+	int			charge;
+	
+	res = 0;
 	i = 0;
-	sum = 0;
-	while (i < n)
+	charge = 1;
+	while ('0' <= (*s)[i] && (*s)[i] <= '9')
 	{
-		sum *= 10;
-		sum += t[i++];
+		res = res * 10 + (*s)[i] - '0';
+		i++;
 	}
-	return (sum);
+	(*s) = &(*s)[i];
+	return (res * charge);
 }

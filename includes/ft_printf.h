@@ -6,7 +6,7 @@
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:37:12 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/25 14:48:26 by rde-kwaa         ###   ########.fr       */
+/*   Updated: 2018/07/31 22:34:26 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,24 @@
 # include <wchar.h>
 # include <stdio.h>
 
+# define INDICATORS		"+-#0 .123456789hljz"
+
 typedef struct			s_atri
 {
-	unsigned int	wdth;
-	char			flag;
-	char			spec;
-	unsigned int	lnth;
-	char			*format;
+	char			*flag;
+	short			wdth;
+	short			pcsn;
+	int				h;
+	int				hh;
+	int				l;
+	int				ll;
+	int				z;
+	int				j;
+	int				spec;
+	short			slen;
 }						t_atri;
 
-# define SPECIFIERS		"sSpdDioOuUxXcC"
+# define SPECIFIERS		"%sSpdDioOuUxXcC"
 
 /*
 ** @ s		: String of characters ✓
@@ -47,7 +55,7 @@ typedef struct			s_atri
 ** @ 12 / 12 ✓✓✓✓✓✓✓✓✓✓✓✓
 */
 
-# define FLAGS			"#0-+"
+# define FLAGS			"#0-+ "
 
 /*
 ** @HASH  : Used with o, x or X specifiers the value is preceeded with
@@ -72,7 +80,7 @@ typedef struct			s_atri
 ** The following chart shows the types used to interpret the corresponding
 ** specifier with and without the length specifier.
 **
-** length  | d i           | u o O x X b            | c      | s        | p
+** length  | d i           | u o O x X             | c      | s        | p
 ** -----------------------------------------------------------------------------
 ** (none)  | int           | unsigned int           | int    | char*    | void*
 ** hh      | signed char   | unsigned char          |        |          |
@@ -84,19 +92,15 @@ typedef struct			s_atri
 */
 
 int						ft_printf(const char *format, ...);
-int						ft_find_spec(va_list arg, t_atri butes);
-int						ft_flags(char f, char c, long long n);
-int						ft_str(va_list arg, t_atri butes);
-int						ft_wstr(va_list arg, t_atri butes);
-int						ft_poi(va_list arg, t_atri butes);
-int						ft_nbr(va_list arg, t_atri butes);
-int						ft_lnbr(va_list arg, t_atri butes);
-int						ft_oct(va_list arg, t_atri butes);
-int						ft_octl(va_list arg, t_atri butes);
-int						ft_unbr(va_list arg, t_atri butes);
-int						ft_ulnbr(va_list arg, t_atri butes);
-int						ft_hex(va_list arg, t_atri butes);
-int						ft_hexu(va_list arg, t_atri butes);
-int						ft_char(va_list arg, t_atri butes);
+int						ft_form(char **format, va_list arg);
+int						ft_spec(t_atri *bute, va_list arg);
+int						ft_lit(t_atri *bute, char c);
+int						ft_str(t_atri *bute, void *s);
+int						ft_poi(t_atri *bute, void *n);
+int						ft_nbr(t_atri *bute, void *n);
+int						ft_oct(t_atri *bute, void *n);
+int						ft_unb(t_atri *bute, void *n);
+int						ft_hex(t_atri *bute, void *n);
+int						ft_char(t_atri *bute, void *c);
 
 #endif

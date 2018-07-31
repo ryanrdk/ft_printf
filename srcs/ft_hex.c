@@ -5,24 +5,109 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 19:03:21 by rde-kwaa          #+#    #+#             */
-/*   Updated: 2018/07/25 14:49:42 by rde-kwaa         ###   ########.fr       */
+/*   Created: 2018/07/31 21:54:12 by rde-kwaa          #+#    #+#             */
+/*   Updated: 2018/07/31 21:54:16 by rde-kwaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_hex(va_list arg, t_atri bute)
+static size_t	ft_len(intmax_t n)
 {
-	unsigned long	n;
-	char			*s;
+	size_t	i;
+	
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		n /= 16;
+		i++;
+	}
+	return (i);
+}
 
-	n = va_arg(arg, unsigned long);
-	if (bute.flag)
-		bute.lnth = ft_flags(bute.flag, 'x', (long long)n);
-	s = ft_htoa(n);
-	bute.lnth += ft_putstr(s);
-	ft_memdel(&s);
-	return (bute.lnth);
+static size_t	ft_hexlen(t_atri *bute, intmax_t n)
+{
+	int		cnt;
+	int		nb;
+	
+	cnt = ft_len(n);
+	nb = 0;
+	if (bute->pcsn != -1 && bute->pcsn > cnt)
+	{
+		nb = (bute->pcsn - cnt);
+		cnt = bute->pcsn;
+	}
+	if (bute->flag[1] == '#' && n != 0)
+		cnt += 2;
+	if (cnt > 0)
+		bute->pcsn = nb;
+	else if (n == 0 && bute->pcsn == 0)
+	{
+		bute->pcsn = -2;
+		cnt = 0;
+	}
+	else
+		bute->pcsn = -1;
+	return (cnt);
+}
+
+static size_t	ft_puthex(intmax_t n, t_atri *bute, char *base)
+{
+	int len;
+	
+	len = 0;
+	if (n == 0 && bute->pcsn == -2)
+		return (0);
+	if (n >= 16)
+	{
+		len += ft_puthex(n / 16, bute, base);
+		len += ft_putchar(base[n % 16]) ;
+	}
+	else
+		len += ft_putchar(base[n % 16]);
+	return (len);
+}
+
+static int	ft_handler(t_atri *bute, intmax_t n)
+{
+	int	len;
+	
+	len = 0;
+	if ((bute->flag)[2] == '0' && bute->pcsn == -1)
+		(bute->flag)[0] = '0';
+	bute->slen = ft_hexlen(bute, n);
+	if (bute->flag[0] == '0' && bute->flag[1] == '#' && n != 0)
+		len += (bute->spec == 'X') ? ft_putstr("0X", -1) : ft_putstr("0x", -1);
+	while ((bute->flag[3] != '-' && bute->wdth > (bute->slen)))
+		(len += ft_putchar((bute->flag)[0])) && bute->wdth--;
+	if ((bute->flag)[0] == ' ' && bute->flag[1] == '#' && n != 0)
+		len += (bute->spec == 'X') ? ft_putstr("0X", -1) : ft_putstr("0x", -1);
+	while (bute->pcsn != -1 && bute->pcsn > 0)
+		(len += ft_putchar('0')) && bute->pcsn--;
+	len += (bute->spec == 'X') ? ft_puthex(n, bute, "0123456789ABCDEF") : \
+	ft_puthex(n, bute, "0123456789abcdef");
+	while (bute->wdth > bute->slen && (bute->flag)[3] == '-')
+		(len += ft_putchar(' ')) && bute->wdth--;
+	return (len);
+}
+
+int			ft_hex(t_atri *bute, void *n)
+{
+	if (bute->h)
+		return (ft_handler(bute, (short)n));
+	else if (bute->hh)
+		return (ft_handler(bute, (char)n));
+	else if (bute->l)
+		return (ft_handler(bute, (long)n));
+	else if (bute->ll)
+		return (ft_handler(bute, (long long)n));
+	else if (bute->z)
+		return (ft_handler(bute, (size_t)n));
+	else if (bute->j)
+		return (ft_handler(bute, (intmax_t)n));
+	else
+		return (ft_handler(bute, (int)n));
 }
