@@ -6,7 +6,7 @@
 #    By: rde-kwaa <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/02 11:42:00 by rde-kwaa          #+#    #+#              #
-#    Updated: 2018/07/31 22:38:27 by rde-kwaa         ###   ########.fr        #
+#    Updated: 2018/07/31 23:18:03 by rde-kwaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,9 @@ OBJ = 		$(SRCS:.c=.o) $(LIBFTS:.c=.o)
 FLAGS =		-Wall -Werror -Wextra
 HEADER =	-Iincludes
 
-all: 		$(NAME)
+.PHONY =	all clean fclean re
+
+all: $(NAME)
 
 # Compilation
 $(NAME):
@@ -53,5 +55,3 @@ fclean:		clean
 			@echo "libft.a deleted!"
 
 re:			fclean all
-
-.PHONY =	all clean fclean clean re

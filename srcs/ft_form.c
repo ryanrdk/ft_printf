@@ -86,7 +86,7 @@ int				ft_form(char **format, va_list arg)
 	while ((ft_strchr(INDICATORS, **format)))
 	{
 		(ft_strchr(FLAGS, **format)) ? ft_flag(format, &bute) : 0;
-		if (ft_isdigit(**format))
+		if (ft_strchr("123456789", **format))
 		{
 			bute.wdth = ft_isuma(format);
 			continue ;
