@@ -17,9 +17,10 @@ static size_t	ft_len(intmax_t n)
 {
 	size_t	i;
 	
-	i = 0;
+	i = 1;
 	if (n == 0)
 		return (1);
+	n /= 8;
 	while (n)
 	{
 		n /= 8;
@@ -44,7 +45,7 @@ static size_t	ft_octlen(t_atri *bute, intmax_t n)
 		cnt++;
 	if (cnt > 0)
 		bute->pcsn = nb;
-	else if (n == 0 && bute->pcsn == 0 /*&& bute->flag[1] != '#'*/)
+	else if (n == 0 && bute->pcsn == 0 && bute->flag[1] != '#')
 	{
 		bute->pcsn = -2;
 		cnt = 0;
