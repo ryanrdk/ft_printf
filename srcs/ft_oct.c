@@ -96,15 +96,15 @@ static int	ft_handler(t_atri *bute, intmax_t n)
 int			ft_oct(t_atri *bute, void *n)
 {
 	if (bute->spec == 'O')
-		return (ft_handler(bute, (long)n));
+		return (ft_handler(bute, (unsigned long)n));
 	else if (bute->h)
-		return (ft_handler(bute, (short)n));
+		return (ft_handler(bute, (unsigned short)n));
 	else if (bute->hh)
-		return (ft_handler(bute, (char)n));
+		return (ft_handler(bute, (unsigned char)n));
 	else if (bute->l)
-		return (ft_handler(bute, (long)n));
+		return (ft_handler(bute, (unsigned long)n));
 	else if (bute->ll)
-		return (ft_handler(bute, (long long)n));
+		return (ft_handler(bute, (unsigned long long)n));
 	else if (bute->z)
 		return (ft_handler(bute, (size_t)n));
 	else if (bute->j)
