@@ -43,7 +43,7 @@ static void		ft_flag(char **f, t_atri *bute)
 static int		ft_doublecf(char *format, char c)
 {
 	int		n;
-	
+
 	n = 0;
 	while (ft_strchr(INDICATORS, *format))
 	{
@@ -82,7 +82,7 @@ static void		ft_conv(char **format, t_atri *bute)
 int				ft_form(char **format, va_list arg)
 {
 	t_atri	bute;
-	
+
 	init_atri(&bute);
 	while ((ft_strchr(INDICATORS, **format)))
 	{

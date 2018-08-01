@@ -14,9 +14,9 @@
 
 int		ft_isuma(char **s)
 {
-	int			res;
-	int			i;
-	
+	int	res;
+	int	i;
+
 	res = 0;
 	i = 0;
 	while ('0' <= (*s)[i] && (*s)[i] <= '9')

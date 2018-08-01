@@ -16,7 +16,7 @@
 int		ft_lit(t_atri *bute, char c)
 {
 	int	len;
-	
+
 	len = 0;
 	if ((bute->flag)[2] == '0')
 		(bute->flag)[0] = '0';

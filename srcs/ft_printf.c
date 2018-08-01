@@ -15,9 +15,9 @@
 
 int		ft_printf(const char *format, ...)
 {
-	va_list	args;
-	int 	len;
-	
+	va_list		args;
+	int			len;
+
 	va_start(args, format);
 	len = 0;
 	while (*format != '\0')

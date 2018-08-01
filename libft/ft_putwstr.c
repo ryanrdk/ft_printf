@@ -26,17 +26,17 @@ static int	ft_wclen(unsigned int wc)
 		return (0);
 }
 
-static int			ft_putwchar(wchar_t wc)
+static int	ft_putwchar(wchar_t wc)
 {
 	int				len;
 	int				slen;
 	unsigned int	curr;
-	
+
 	len = 0;
 	slen = ft_wclen(wc);
 	if (slen == 1)
 		return (ft_putchar(wc));
-	curr = (240 << (4 - slen)) | (wc >> (( slen -1) * 6));
+	curr = (240 << (4 - slen)) | (wc >> ((slen - 1) * 6));
 	len += ft_putchar(curr);
 	slen--;
 	while (slen)

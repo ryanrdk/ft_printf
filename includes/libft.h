@@ -24,7 +24,7 @@ int					ft_strchr(char *s, int c);
 char				*ft_strdup(char const *src);
 int					ft_strlen(char const *s);
 int					ft_strlenp(char const *s, int p);
-void				*ft_memcpy( void *dst, const void *src, size_t n);
+void				*ft_memcpy(void *dst, const void *src, size_t n);
 int					ft_putwstr(wchar_t *ws, int p);
 char				*ft_strncpy(char *des, char const *src, size_t n);
 

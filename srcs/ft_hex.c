@@ -16,7 +16,7 @@
 static size_t	ft_len(intmax_t n)
 {
 	size_t	i;
-	
+
 	i = 1;
 	if (n == 0)
 		return (1);
@@ -33,7 +33,7 @@ static size_t	ft_hexlen(t_atri *bute, intmax_t n)
 {
 	int		cnt;
 	int		nb;
-	
+
 	cnt = ft_len(n);
 	nb = 0;
 	if (bute->pcsn != -1 && bute->pcsn > cnt)
@@ -58,24 +58,24 @@ static size_t	ft_hexlen(t_atri *bute, intmax_t n)
 static size_t	ft_puthex(uintmax_t n, t_atri *bute, char *base)
 {
 	int len;
-	
+
 	len = 0;
 	if (n == 0 && bute->pcsn == -2)
 		return (0);
 	if (n >= 16)
 	{
 		len += ft_puthex(n / 16, bute, base);
-		len += ft_putchar(base[n % 16]) ;
+		len += ft_putchar(base[n % 16]);
 	}
 	else
 		len += ft_putchar(base[n % 16]);
 	return (len);
 }
 
-static int	ft_handler(t_atri *bute, uintmax_t n)
+static int		ft_handler(t_atri *bute, uintmax_t n)
 {
 	int	len;
-	
+
 	len = 0;
 	if ((bute->flag)[2] == '0' && bute->pcsn == -1)
 		(bute->flag)[0] = '0';
@@ -95,7 +95,7 @@ static int	ft_handler(t_atri *bute, uintmax_t n)
 	return (len);
 }
 
-int			ft_hex(t_atri *bute, void *n)
+int				ft_hex(t_atri *bute, void *n)
 {
 	if (bute->h)
 		return (ft_handler(bute, (unsigned short)n));

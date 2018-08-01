@@ -16,7 +16,7 @@
 int		ft_str(t_atri *bute, void *str)
 {
 	int len;
-	
+
 	bute->slen = (str != NULL) ? ft_strlen((char *)str) : 6;
 	len = 0;
 	bute->slen = !bute->pcsn ? bute->wdth : bute->slen;
@@ -25,7 +25,7 @@ int		ft_str(t_atri *bute, void *str)
 	while ((bute->flag)[3] != '-' && bute->wdth > bute->slen)
 		(len += ft_putchar((bute->flag)[0])) && (bute->wdth)--;
 	while ((bute->flag)[3] != '-' && bute->wdth > bute->pcsn &&
-		   bute->pcsn != -1 && (bute->slen > bute->pcsn))
+		bute->pcsn != -1 && (bute->slen > bute->pcsn))
 		len += ft_putchar((bute->flag)[0]) && bute->wdth--;
 	if (bute->spec == 's' && !bute->l)
 		len += ft_putstr((char *)str, bute->pcsn);
@@ -34,7 +34,7 @@ int		ft_str(t_atri *bute, void *str)
 	while ((bute->flag)[3] == '-' && bute->wdth > bute->slen)
 		len += ft_putchar(' ') && bute->wdth--;
 	while ((bute->flag)[3] == '-' && bute->wdth > bute->pcsn &&
-		   bute->pcsn != -1 && (bute->slen-- - bute->pcsn))
+		bute->pcsn != -1 && (bute->slen-- - bute->pcsn))
 		len += ft_putchar(' ');
 	return (len);
 }

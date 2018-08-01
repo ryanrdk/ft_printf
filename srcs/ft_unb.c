@@ -1,4 +1,4 @@
- /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_unb.c                                           :+:      :+:    :+:   */
@@ -16,7 +16,7 @@
 static size_t	ft_len(intmax_t n)
 {
 	size_t	i;
-	
+
 	i = 0;
 	if (n == 0)
 		return (1);
@@ -32,7 +32,7 @@ static size_t	ft_unblen(t_atri *bute, intmax_t n)
 {
 	int		cnt;
 	int		nb;
-	
+
 	cnt = ft_len(n);
 	nb = 0;
 	if (bute->pcsn != -1 && bute->pcsn > cnt)
@@ -55,7 +55,7 @@ static size_t	ft_unblen(t_atri *bute, intmax_t n)
 static size_t	ft_putunb(uintmax_t n, t_atri *bute)
 {
 	int len;
-	
+
 	len = 0;
 	if (n == 0 && bute->pcsn == -2)
 		return (0);
@@ -69,10 +69,10 @@ static size_t	ft_putunb(uintmax_t n, t_atri *bute)
 	return (len);
 }
 
-static int	ft_handler(t_atri *bute, uintmax_t n)
+static int		ft_handler(t_atri *bute, uintmax_t n)
 {
 	int len;
-	
+
 	len = 0;
 	if ((bute->flag)[2] == '0' && bute->pcsn == -1)
 		(bute->flag)[0] = '0';
@@ -87,7 +87,7 @@ static int	ft_handler(t_atri *bute, uintmax_t n)
 	return (len);
 }
 
-int			ft_unb(t_atri *bute, void *n)
+int				ft_unb(t_atri *bute, void *n)
 {
 	if (bute->spec == 'U')
 		return (ft_handler(bute, (unsigned long)n));

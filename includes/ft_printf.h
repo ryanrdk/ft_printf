@@ -17,9 +17,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
-# include <wchar.h>
-# include <stdio.h>
 
+# define ABS(n) ((n < 0) ? -n : n)
 # define INDICATORS		"+-#0 .123456789hljz"
 
 typedef struct			s_atri
