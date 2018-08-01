@@ -16,7 +16,6 @@
 # include <string.h>
 # include <unistd.h>
 
-int					ft_isdigit(int c);
 int					ft_isuma(char **s);
 void				ft_strdel(char **ap);
 int					ft_putchar(int c);
@@ -26,5 +25,6 @@ char				*ft_strdup(char const *src);
 int					ft_strlen(char const *s);
 int					ft_strlenp(char const *s, int p);
 void				*ft_memcpy( void *dst, const void *src, size_t n);
+int					ft_putwstr(wchar_t *ws, int p);
 
 #endif

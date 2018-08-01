@@ -29,8 +29,8 @@ int		ft_str(t_atri *bute, void *str)
 		len += ft_putchar((bute->flag)[0]) && bute->wdth--;
 	if (bute->spec == 's' && !bute->l)
 		len += ft_putstr((char *)str, bute->pcsn);
-	//else if (bute->spec == 'S' || (bute->spec == 's' && bute->l))
-	//	len += ft_print_wstr((wchar_t *)str, bute->pcsn);
+	else if (bute->spec == 'S' || (bute->spec == 's' && bute->l))
+		len += ft_putwstr((wchar_t *)str, bute->pcsn);
 	while ((bute->flag)[3] == '-' && bute->wdth > bute->slen)
 		len += ft_putchar(' ') && bute->wdth--;
 	while ((bute->flag)[3] == '-' && bute->wdth > bute->pcsn &&
