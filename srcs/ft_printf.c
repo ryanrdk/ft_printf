@@ -27,7 +27,7 @@ int		ft_printf(const char *format, ...)
 		else
 		{
 			format++;
-			len += ft_form((char*)(&format), args);
+			len += ft_form((char**)(&format), args);
 		}
 		format++;
 	}

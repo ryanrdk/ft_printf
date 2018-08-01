@@ -91,7 +91,7 @@ typedef struct			s_atri
 */
 
 int						ft_printf(const char *format, ...);
-int						ft_form(char *format, va_list arg);
+int						ft_form(char **format, va_list arg);
 int						ft_spec(t_atri *bute, va_list arg);
 int						ft_lit(t_atri *bute, char c);
 int						ft_str(t_atri *bute, void *s);

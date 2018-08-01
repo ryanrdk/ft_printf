@@ -16,7 +16,7 @@
 # include <string.h>
 # include <unistd.h>
 
-int					ft_isuma(char *s);
+int					ft_isuma(char **s);
 void				ft_strdel(char **ap);
 int					ft_putchar(int c);
 int					ft_putstr(char const *str, int p);

@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-int		ft_isuma(char *s)
+int		ft_isuma(char **s)
 {
 	int	res;
 	int	i;
 
 	res = 0;
 	i = 0;
-	while ('0' <= s[i] && s[i] <= '9')
+	while ('0' <= (*s)[i] && (*s)[i] <= '9')
 	{
-		res = res * 10 + s[i] - '0';
+		res = res * 10 + (*s)[i] - '0';
 		i++;
 	}
-	s = &s[i];
+	(*s) = &(*s)[i];
 	return (res);
 }
