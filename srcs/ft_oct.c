@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-static size_t	ft_len(uintmax_t n)
+static size_t	ft_len(intmax_t n)
 {
 	size_t	i;
 	
@@ -29,7 +29,7 @@ static size_t	ft_len(uintmax_t n)
 	return (i);
 }
 
-static size_t	ft_octlen(t_atri *bute, uintmax_t n)
+static size_t	ft_octlen(t_atri *bute, intmax_t n)
 {
 	int		cnt;
 	int		nb;
@@ -111,5 +111,5 @@ int			ft_oct(t_atri *bute, void *n)
 	else if (bute->j)
 		return (ft_handler(bute, (uintmax_t)n));
 	else
-		return (ft_handler(bute, (int)n));
+		return (ft_handler(bute, (unsigned int)n));
 }
