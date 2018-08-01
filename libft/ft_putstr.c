@@ -22,7 +22,8 @@ int		ft_putstr(const char *str, int p)
 		return (ft_putstr("(null)", p));
 	len = ft_strlenp(str, p);
 	tmp = (char*)malloc(sizeof(char) * (len + 1));
-	strncpy(tmp, str, len);
+	ft_strncpy(tmp, str, len);
 	write(1, tmp, len);
+	free(tmp);
 	return (len);
 }
