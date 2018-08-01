@@ -95,7 +95,7 @@ static int	ft_handler(t_atri *bute, intmax_t n)
 
 int			ft_oct(t_atri *bute, void *n)
 {
-	if (bute->spec == 'D')
+	if (bute->spec == 'O')
 		return (ft_handler(bute, (long)n));
 	else if (bute->h)
 		return (ft_handler(bute, (short)n));

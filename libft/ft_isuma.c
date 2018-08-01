@@ -16,16 +16,14 @@ int		ft_isuma(char **s)
 {
 	int			res;
 	int			i;
-	int			charge;
 	
 	res = 0;
 	i = 0;
-	charge = 1;
 	while ('0' <= (*s)[i] && (*s)[i] <= '9')
 	{
 		res = res * 10 + (*s)[i] - '0';
 		i++;
 	}
 	(*s) = &(*s)[i];
-	return (res * charge);
+	return (res);
 }

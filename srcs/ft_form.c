@@ -82,6 +82,7 @@ static void		ft_conv(char **format, t_atri *bute)
 int				ft_form(char **format, va_list arg)
 {
 	t_atri	bute;
+	
 	init_atri(&bute);
 	while ((ft_strchr(INDICATORS, **format)))
 	{

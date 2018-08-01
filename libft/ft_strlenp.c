@@ -14,7 +14,7 @@
 
 int	ft_strlenp(const char *s, int p)
 {
-	int				i;
+	int		i;
 	
 	i = 0;
 	if (s != NULL)

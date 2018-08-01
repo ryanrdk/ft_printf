@@ -20,7 +20,7 @@ int			ft_spec(t_atri *bute, va_list arg)
 	len = 0;
 	if (bute->spec == '%')
 		len = ft_lit(bute, '%');
-	if (bute->spec == 's' || bute->spec == 'S')
+	else if (bute->spec == 's' || bute->spec == 'S')
 		len = ft_str(bute, va_arg(arg, void *));
 	else if (bute->spec == 'p')
 		len = ft_poi(bute, va_arg(arg, void *));
