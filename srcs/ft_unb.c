@@ -52,7 +52,7 @@ static size_t	ft_unblen(t_atri *bute, intmax_t n)
 	return (cnt);
 }
 
-static size_t	ft_putunb(intmax_t n, t_atri *bute)
+static size_t	ft_putunb(uintmax_t n, t_atri *bute)
 {
 	int len;
 	
@@ -69,7 +69,7 @@ static size_t	ft_putunb(intmax_t n, t_atri *bute)
 	return (len);
 }
 
-static int	ft_handler(t_atri *bute, intmax_t n)
+static int	ft_handler(t_atri *bute, uintmax_t n)
 {
 	int len;
 	

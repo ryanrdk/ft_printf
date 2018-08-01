@@ -17,9 +17,10 @@ static size_t	ft_len(intmax_t n)
 {
 	size_t	i;
 	
-	i = 0;
+	i = 1;
 	if (n == 0)
 		return (1);
+	n /= 16;
 	while (n)
 	{
 		n /= 16;
@@ -54,7 +55,7 @@ static size_t	ft_poilen(t_atri *bute, intmax_t n)
 	return (cnt);
 }
 
-static size_t	ft_putpoi(intmax_t n, t_atri *bute, char *base)
+static size_t	ft_putpoi(uintmax_t n, t_atri *bute, char *base)
 {
 	int len;
 	
@@ -71,7 +72,7 @@ static size_t	ft_putpoi(intmax_t n, t_atri *bute, char *base)
 	return (len);
 }
 
-static int	ft_handler(t_atri *bute, intmax_t n)
+static int	ft_handler(t_atri *bute, uintmax_t n)
 {
 	int	len;
 	
