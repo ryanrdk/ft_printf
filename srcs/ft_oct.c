@@ -84,7 +84,7 @@ static int	ft_handler(t_atri *bute, intmax_t n)
 	while ((bute->flag[3] != '-' && bute->wdth > (bute->slen)))
 		(len += ft_putchar((bute->flag)[0])) && bute->wdth--;
 	if ((bute->flag)[0] == ' ' && bute->flag[1] == '#' && n != 0)
-		len += ft_putchar(' ');
+		len += ft_putchar('0');
 	while (bute->pcsn != -1 && bute->pcsn > 0)
 		(len += ft_putchar('0')) && bute->pcsn--;
 	len += ft_putoct(n, bute, "01234567");
